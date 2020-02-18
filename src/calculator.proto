@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message Number {
+    float value = 1;
+}
+
+message Numbers {
+    repeated Number values = 1;
+}
+
+service Calculator {
+    rpc SquareRoot(Number) returns (Number) {}
+    rpc Add(Numbers) returns (Number) {}
+}
+
+// protoc -I=. ./src/calculator.proto --js_out=import_style=commonjs,binary:. --plugin=protoc-gen-grpc-web=../protoc-gen-grpc-web-1.0.7-windows-x86_64.exe --grpc-web_out=import_style=commonjs,mode=grpcwebtext:.
+// python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. products.proto
+/* eslint-disable */
