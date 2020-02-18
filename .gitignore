@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# python server
+grpc_python/env/
+grpc_python/__pycache__/
+grpc_python/.vscode/
